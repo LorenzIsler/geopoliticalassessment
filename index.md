@@ -1,4 +1,5 @@
- <!-- Key Risks Detailed -->
+""
+        <!-- Key Risks Detailed -->
         <div class="collapsible-box">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <div class="header-content">
@@ -118,3 +119,10 @@
 
 </body>
 </html>
+"""
+
+# Append final part to file
+with open('/mnt/data/ikea_geopolitical_assessment.html', 'a', encoding='utf-8') as f:
+    f.write(html_part4)
+
+print("✅ Final sections and JavaScript added. The HTML file is now complete and ready for download.")
