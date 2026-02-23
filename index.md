@@ -1,128 +1,114 @@
-""
-        <!-- Key Risks Detailed -->
-        <div class="collapsible-box">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <div class="header-content">
-                    <h2>Key Risks (Detailed)</h2>
-                    <p class="summary-text">Critical risks separated by entity requiring immediate attention and mitigation strategies.</p>
-                    <div class="tags"><span class="tag">#RiskManagement</span></div>
-                </div>
-                <button class="toggle-btn">+</button>
-            </div>
-            <div class="deep-dive-content">
-                <h3><span class="entity-tag tag-ingka">Ingka Group Risks</span></h3>
-                <ul>
-                    <li><strong>Consumer Spending Decline:</strong> Economic downturns directly reduce furniture purchases.</li>
-                    <li><strong>Market Access Restrictions:</strong> Political decisions forcing store closures or operational limits.</li>
-                    <li><strong>Data Privacy Violations:</strong> Non-compliance with GDPR, CCPA, or emerging regulations leading to fines.</li>
-                    <li><strong>Brand Perception Crisis:</strong> Association with controversial stances triggering boycotts.</li>
-                </ul>
-                <h3><span class="entity-tag tag-inter">Inter IKEA Risks</span></h3>
-                <ul>
-                    <li><strong>Tariff Escalation:</strong> Sharp increases in import duties on furniture and components.</li>
-                    <li><strong>Supply Chain Disruptions:</strong> Geopolitical conflicts or climate events interrupting production.</li>
-                    <li><strong>Single-Source Dependency:</strong> Over-reliance on specific countries creating vulnerability.</li>
-                    <li><strong>Logistics Bottlenecks:</strong> Port congestion or shipping route closures delaying deliveries.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Key Opportunities Detailed -->
-        <div class="collapsible-box">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <div class="header-content">
-                    <h2>Key Opportunities (Detailed)</h2>
-                    <p class="summary-text">Strategic opportunities across retail and supply operations that can create competitive advantage.</p>
-                    <div class="tags"><span class="tag">#Growth</span><span class="tag">#Innovation</span></div>
-                </div>
-                <button class="toggle-btn">+</button>
-            </div>
-            <div class="deep-dive-content">
-                <h3><span class="entity-tag tag-ingka">Ingka Group Opportunities</span></h3>
-                <ul>
-                    <li><strong>Circular Retail Leadership:</strong> Expanding buy-back and repair services to meet sustainability demand.</li>
-                    <li><strong>Digital Customer Experience:</strong> AI-driven personalization and seamless omnichannel integration.</li>
-                    <li><strong>Emerging Market Expansion:</strong> Capturing growth in India and Southeast Asia with localized strategies.</li>
-                    <li><strong>Flexible Retail Formats:</strong> Smaller urban stores reducing costs and increasing accessibility.</li>
-                </ul>
-                <h3><span class="entity-tag tag-inter">Inter IKEA Opportunities</span></h3>
-                <ul>
-                    <li><strong>Supply Chain Diversification:</strong> Multi-region sourcing reducing geopolitical risk.</li>
-                    <li><strong>Nearshoring & Friendshoring:</strong> Bringing production closer to key markets.</li>
-                    <li><strong>Sustainable Supply Chains:</strong> Investment in renewable materials and green logistics as a differentiator.</li>
-                    <li><strong>Digital Supply Chain:</strong> AI-driven forecasting and real-time visibility improving efficiency.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Strategic Recommendations -->
-        <div class="collapsible-box">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <div class="header-content">
-                    <h2>Strategic Recommendations</h2>
-                    <p class="summary-text">Actionable steps for both Ingka Group and Inter IKEA to navigate challenges and capitalize on opportunities.</p>
-                    <div class="tags"><span class="tag">#ActionPlan</span></div>
-                </div>
-                <button class="toggle-btn">+</button>
-            </div>
-            <div class="deep-dive-content">
-                <h3><span class="entity-tag tag-ingka">Recommendations for Ingka Group</span></h3>
-                <ul>
-                    <li><strong>Accelerate Circular Retail:</strong> Expand buy-back and repair services across all markets.</li>
-                    <li><strong>Invest in Digital Infrastructure:</strong> Enhance e-commerce platforms and AI-driven personalization.</li>
-                    <li><strong>Strengthen Data Governance:</strong> Build robust compliance frameworks for GDPR, CCPA, etc.</li>
-                    <li><strong>Localize Market Strategies:</strong> Empower regional teams to adapt offerings to local conditions.</li>
-                </ul>
-                <h3><span class="entity-tag tag-inter">Recommendations for Inter IKEA</span></h3>
-                <ul>
-                    <li><strong>Diversify Supply Base Urgently:</strong> Implement "China+1" strategy; invest in Vietnam, India, Mexico.</li>
-                    <li><strong>Build Regional Supply Hubs:</strong> Create self-sufficient supply ecosystems in Americas, Europe, and Asia.</li>
-                    <li><strong>Enhance Supply Chain Visibility:</strong> Deploy AI for real-time tracking and predictive risk management.</li>
-                    <li><strong>Scenario Planning & Stress Testing:</strong> Regularly test supply chain resilience against geopolitical shocks.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Conclusion -->
-        <div class="collapsible-box">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <div class="header-content">
-                    <h2>Conclusion & Outlook (1-5 Years)</h2>
-                    <p class="summary-text">Final thoughts on navigating the geopolitical landscape for sustained success.</p>
-                </div>
-                <button class="toggle-btn">+</button>
-            </div>
-            <div class="deep-dive-content">
-                <p>The geopolitical landscape over the next 1-5 years will be characterized by <strong>economic volatility, trade fragmentation, and accelerated sustainability demands</strong>. For IKEA, this environment presents both challenges and transformative opportunities.</p>
-                <p><strong>Ingka Group</strong> must navigate reduced consumer spending while seizing the opportunity to lead in circular retail. <strong>Inter IKEA</strong> faces urgent pressure to diversify supply chains while managing rising costs.</p>
-                <p>By aligning on sustainability, leveraging digital transformation, and maintaining agility, IKEA can emerge stronger and more resilient. Proactive adaptation to these geopolitical realities will determine IKEA's competitive position for the remainder of the decade.</p>
-            </div>
-        </div>
-
-    </div> <!-- Closing container div -->
-
-    <!-- JAVASCRIPT FOR TOGGLE FUNCTIONALITY -->
-    <script>
-        function toggleSection(headerElement) {
-            const deepDiveContent = headerElement.nextElementSibling;
-            const toggleBtn = headerElement.querySelector('.toggle-btn');
-
-            if (deepDiveContent.classList.contains('active')) {
-                deepDiveContent.classList.remove('active');
-                toggleBtn.textContent = '+';
-            } else {
-                deepDiveContent.classList.add('active');
-                toggleBtn.textContent = '−';
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IKEA Geopolitical Assessment 2026-2031 - Strategic analysis for Ingka Group and Inter IKEA">
+    <title>IKEA Geopolitical Assessment 2026-2031</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
 
-</body>
-</html>
-"""
+        body {
+            font-family: 'Noto Sans', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-# Append final part to file
-with open('/mnt/data/ikea_geopolitical_assessment.html', 'a', encoding='utf-8') as f:
-    f.write(html_part4)
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-print("✅ Final sections and JavaScript added. The HTML file is now complete and ready for download.")
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0058ab;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #484848;
+            font-weight: 400;
+        }
+
+        .executive-summary {
+            background-color: #f9f9f9;
+            border-left: 5px solid #0058ab;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .executive-summary h2 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #0058ab;
+            font-weight: 600;
+        }
+
+        .summary-section {
+            margin-bottom: 30px;
+        }
+
+        .summary-section h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #111111;
+            font-weight: 600;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .summary-section li {
+            padding: 10px 0 10px 25px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .summary-section li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #0058ab;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .strategic-rec {
+            background-color: #fff9e6;
+            border-left: 5px solid #ffcc00;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 1.05em;
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .section-header {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-
