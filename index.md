@@ -1,9 +1,4 @@
-Code (Python)
-
-# Create a cleaner HTML file with working collapsible sections
-# Smaller typeface, Calibri/Noto, no symbols
-
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
