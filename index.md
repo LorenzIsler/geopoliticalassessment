@@ -1,3 +1,5 @@
+ode (Python)
+
 # Create the complete HTML file for IKEA Geopolitical Assessment
 
 html_content = '''<!DOCTYPE html>
@@ -5,9 +7,9 @@ html_content = '''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IKEA Geopolitical Assessment 2026-2031</title>
-    <meta name="description" content="Comprehensive geopolitical assessment for IKEA (Ingka Group & Inter IKEA), focusing on 1-5 year strategic planning.">
-    <meta name="keywords" content="IKEA, Ingka Group, Inter IKEA, Geopolitical Assessment, Retail Strategy, Supply Chain">
+    <title>Geopolitical Assessment for IKEA | 1-5 Years</title>
+    <meta name="description" content="Strategic geopolitical assessment for IKEA Retail (Ingka Group) and Inter IKEA, focusing on medium-term risks and opportunities.">
+    <meta name="keywords" content="IKEA, Ingka Group, Inter IKEA, Geopolitical Assessment, Strategic Planning">
     
     <style>
         * {
@@ -17,84 +19,52 @@ html_content = '''<!DOCTYPE html>
         }
         
         body {
-            font-family: 'Noto IKEA', 'Verdana', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #111;
-            background-color: #f5f5f5;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            color: #333;
+            background-color: #fff;
             padding: 20px;
         }
         
-        /* IKEA Header */
-        header {
-            background-color: #0058ab;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            margin-bottom: 30px;
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
         }
         
-        header h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-        
-        .header-accent {
-            height: 6px;
-            background-color: #ffcc00;
-            margin-top: 20px;
-        }
-        
-        /* Tags */
-        .tags {
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-        
-        .tag {
-            background-color: #fff;
+        h1 {
             color: #0058ab;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            border: 2px solid #0058ab;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ffcc00;
         }
         
-        /* Executive Summary Box */
-        .executive-summary {
-            background: linear-gradient(135deg, #0058ab 0%, #0070d2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
+        .subtitle {
+            text-align: center;
+            color: #666;
             margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(0,88,171,0.3);
+            font-size: 0.95em;
+        }
+        
+        .executive-summary {
+            background-color: #f5f5f5;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 5px solid #0058ab;
         }
         
         .executive-summary h2 {
-            font-size: 2em;
+            color: #0058ab;
+            font-size: 1.6em;
             margin-bottom: 20px;
-            border-bottom: 3px solid #ffcc00;
-            padding-bottom: 10px;
         }
         
         .executive-summary h3 {
+            color: #333;
+            font-size: 1.2em;
             margin-top: 20px;
             margin-bottom: 10px;
-            font-size: 1.3em;
         }
         
         .executive-summary ul {
@@ -106,282 +76,300 @@ html_content = '''<!DOCTYPE html>
             margin-bottom: 8px;
         }
         
-        .highlight-box {
-            background-color: rgba(255, 204, 0, 0.2);
-            border-left: 4px solid #ffcc00;
+        .recommendation {
+            background-color: #fff3cd;
             padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
+            margin-top: 20px;
+            border-left: 4px solid #ffcc00;
+            font-weight: bold;
         }
         
-        /* Section Cards */
-        .section-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 5px solid #0058ab;
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
         }
         
-        .section-card h2 {
-            color: #0058ab;
-            font-size: 1.8em;
-            margin-bottom: 15px;
+        .section-header {
+            padding: 20px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            transition: background-color 0.2s;
         }
         
-        .section-card h3 {
-            color: #333;
-            font-size: 1.3em;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .section-header:hover {
+            background-color: #f0f0f0;
         }
         
-        /* Summary and Deep Dive */
-        .summary {
-            font-size: 1.05em;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 15px;
+        .section-header h2 {
+            color: #0058ab;
+            font-size: 1.4em;
+            margin: 0;
         }
         
-        .deep-dive {
+        .toggle-icon {
+            font-size: 1.5em;
+            color: #0058ab;
+            font-weight: bold;
+        }
+        
+        .section-content {
+            padding: 25px;
             display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #f0f0f0;
         }
         
-        .deep-dive.active {
+        .section-content.active {
             display: block;
         }
         
-        .deep-dive-btn {
-            background-color: #0058ab;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1em;
-            font-weight: 600;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+        .subsection {
+            margin-bottom: 25px;
         }
         
-        .deep-dive-btn:hover {
-            background-color: #003d7a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,88,171,0.3);
-        }
-        
-        .deep-dive-btn.active {
-            background-color: #ffcc00;
-            color: #111;
-        }
-        
-        /* Regional Boxes */
-        .region-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .region-box {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            border-top: 4px solid #0058ab;
-        }
-        
-        .region-box h3 {
+        .subsection h3 {
             color: #0058ab;
-            margin-bottom: 12px;
             font-size: 1.2em;
+            margin-bottom: 10px;
         }
         
-        /* Two Column Layout */
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
+        .subsection h4 {
+            color: #333;
+            font-size: 1.05em;
+            margin-top: 15px;
+            margin-bottom: 8px;
         }
         
-        .column-box {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 6px;
-            border-left: 4px solid #0058ab;
-        }
-        
-        .column-box.inter-ikea {
-            border-left-color: #ffcc00;
-        }
-        
-        .column-box h4 {
-            color: #0058ab;
-            margin-bottom: 12px;
-            font-size: 1.1em;
-        }
-        
-        .column-box.inter-ikea h4 {
-            color: #d68000;
-        }
-        
-        /* Lists */
-        ul, ol {
-            margin-left: 20px;
+        ul {
+            margin-left: 25px;
             margin-bottom: 15px;
         }
         
         li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         
-        /* Scenario Cards */
-        .scenario-card {
-            background: linear-gradient(to right, #f5f5f5, white);
-            border-left: 5px solid #ffcc00;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 6px;
+        .region-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
         }
         
-        .scenario-card h3 {
+        .region-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 3px solid #0058ab;
+        }
+        
+        .region-box h4 {
             color: #0058ab;
             margin-bottom: 10px;
         }
         
-        /* Risk/Opportunity Boxes */
-        .risk-box {
-            background-color: #fff5f5;
-            border-left: 4px solid #dc3545;
+        .scenario-box {
+            background-color: #f0f7ff;
             padding: 15px;
             margin-bottom: 15px;
-            border-radius: 4px;
+            border-left: 3px solid #0058ab;
         }
         
-        .opportunity-box {
-            background-color: #f0f8ff;
-            border-left: 4px solid #28a745;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
+        .scenario-box h4 {
+            color: #0058ab;
+            margin-bottom: 8px;
         }
         
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+        .risk-item, .opportunity-item {
+            margin-bottom: 12px;
+            padding-left: 15px;
         }
         
-        .footer-accent {
-            height: 6px;
-            background-color: #ffcc00;
-            margin-bottom: 20px;
+        strong {
+            color: #000;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
-            .two-column {
+            .region-grid {
                 grid-template-columns: 1fr;
             }
             
-            header h1 {
+            h1 {
                 font-size: 1.8em;
             }
             
-            .region-grid {
-                grid-template-columns: 1fr;
+            .section-header h2 {
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>🌍 IKEA Geopolitical Assessment</h1>
-        <p>Strategic Outlook 2026-2031 | For the Global Management Board</p>
-        <div class="header-accent"></div>
-        <div class="tags">
-            <span class="tag">#IngkaGroup</span>
-            <span class="tag">#InterIKEA</span>
-            <span class="tag">#GeopoliticalRisk</span>
-            <span class="tag">#RetailStrategy</span>
-            <span class="tag">#SupplyChain</span>
-            <span class="tag">#1-5Years</span>
-        </div>
-    </header>
-
     <div class="container">
+        <h1>Geopolitical Assessment for IKEA</h1>
+        <div class="subtitle">
+            Strategic Outlook for 1-5 Years | Ingka Group (Retail) & Inter IKEA (Supply Chain)
+        </div>
         
-        <!-- EXECUTIVE SUMMARY -->
         <div class="executive-summary">
-            <h2>🚀 Executive Summary</h2>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">The global geopolitical landscape over the next 1-5 years presents both significant challenges and strategic opportunities for IKEA. This assessment distinguishes between <strong>Ingka Group (Retail)</strong> and <strong>Inter IKEA (Supply Chain & Trade)</strong> to provide targeted strategic insights.</p>
+            <h2>Executive Summary</h2>
             
-            <div class="highlight-box">
-                <strong>KEY INSIGHT:</strong> Economic volatility, regulatory fragmentation, and shifting trade dynamics will require agile, localized strategies while maintaining global brand coherence.
-            </div>
-            
-            <h3>⚠️ Top Risks (2026-2031)</h3>
+            <h3>Top Risks (1-5 Years)</h3>
             <ul>
-                <li><strong>Reduced Consumer Spending (Ingka):</strong> Economic downturns and inflation directly impact discretionary home furnishing purchases</li>
-                <li><strong>Trade Barriers & Tariffs (Inter IKEA):</strong> Protectionism and geopolitical tensions increase costs and complexity in global sourcing</li>
-                <li><strong>Regulatory Compliance Burden:</strong> Divergent ESG, data privacy, and product standards across markets</li>
-                <li><strong>Supply Chain Disruptions (Inter IKEA):</strong> Continued volatility in logistics, raw materials, and manufacturing hubs</li>
+                <li><strong>Economic Volatility & Reduced Consumer Spending:</strong> Inflation and economic uncertainty directly impact discretionary purchases (Ingka) and increase operational costs (Inter IKEA).</li>
+                <li><strong>Trade Wars & Tariff Escalation:</strong> Rising protectionism and tariffs on furniture and components increase product costs and complicate sourcing strategies (Inter IKEA).</li>
+                <li><strong>Geopolitical Supply Chain Disruptions:</strong> Regional conflicts, sanctions, and political tensions threaten manufacturing hubs and logistics routes (Inter IKEA).</li>
+                <li><strong>Regulatory Fragmentation:</strong> Divergent ESG, data privacy, and product standards across markets create compliance burdens for both retail operations (Ingka) and supply chain (Inter IKEA).</li>
             </ul>
             
-            <h3>✅ Top Opportunities (2026-2031)</h3>
+            <h3>Top Opportunities (1-5 Years)</h3>
             <ul>
-                <li><strong>Digital-First Retail (Ingka):</strong> Accelerated omnichannel innovation and personalized customer experiences</li>
-                <li><strong>Sustainability Leadership:</strong> Circular economy models (buy-back, repair) as competitive advantage</li>
-                <li><strong>Supply Chain Diversification (Inter IKEA):</strong> Strategic expansion into new manufacturing regions reduces single-point dependencies</li>
-                <li><strong>Emerging Market Growth:</strong> Long-term consumer base expansion in Asia, Latin America, and Africa</li>
+                <li><strong>Digital Transformation & Omnichannel Excellence:</strong> Accelerated e-commerce adoption and AI-driven personalization enhance customer experience and operational efficiency (Ingka).</li>
+                <li><strong>Circular Economy Leadership:</strong> Growing consumer demand for sustainable, repairable products and buy-back/rental services creates competitive advantage (Ingka & Inter IKEA).</li>
+                <li><strong>Supply Chain Diversification:</strong> Strategic shifts to nearshoring and multi-regional sourcing reduce geopolitical exposure and improve resilience (Inter IKEA).</li>
+                <li><strong>Emerging Market Expansion:</strong> Strong growth potential in Asia, Latin America, and Africa with rising middle-class consumers seeking affordable home solutions (Ingka).</li>
             </ul>
             
-            <div class="highlight-box">
-                <strong>STRATEGIC RECOMMENDATION:</strong> Prioritize agility, regional diversification, digital excellence, and unwavering sustainability commitment to navigate the 2026-2031 landscape successfully.
+            <div class="recommendation">
+                <strong>Strategic Recommendation:</strong> IKEA must prioritize agility, supply chain diversification, digital innovation, and sustainability leadership to navigate geopolitical volatility and capitalize on evolving consumer demands over the next 1-5 years.
             </div>
         </div>
-
-        <!-- GLOBAL OVERVIEW -->
-        <div class="section-card">
-            <h2>🌍 Global Geopolitical Overview</h2>
-            <div class="summary">
-                <p><strong>Summary:</strong> The 2026-2031 period will be characterized by increased fragmentation, economic uncertainty, climate pressures, and technological disruption. Five key trends will shape the operating environment for both Ingka Group and Inter IKEA.</p>
+        
+        <!-- Global Geopolitical Overview -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('global')">
+                <h2>🌍 Global Geopolitical Overview</h2>
+                <span class="toggle-icon" id="icon-global">+</span>
             </div>
-            <button class="deep-dive-btn" onclick="toggleDeepDive('global-overview')">📊 Deep Dive</button>
-            
-            <div id="global-overview" class="deep-dive">
-                <h3>1. Geopolitical Fragmentation & Competition</h3>
-                <p><strong>Trend:</strong> Shift from hyper-globalization to regionalization, with distinct economic blocs forming (US-aligned, China-aligned, EU-autonomous). US-China rivalry continues to influence trade and technology.</p>
-                <p><strong>Impact on Ingka:</strong> Consumer nationalism may influence purchasing decisions; need for culturally sensitive marketing.</p>
-                <p><strong>Impact on Inter IKEA:</strong> Tariffs on finished goods, non-tariff barriers, and pressure to "friendshore" supply chains.</p>
+            <div class="section-content" id="content-global">
+                <p>Key global trends shaping the 1-5 year outlook:</p>
+                <ul>
+                    <li><strong>Geopolitical Fragmentation:</strong> Shift from globalization to regionalization with competing economic blocs (US-China rivalry, EU autonomy). Impact: Trade barriers, tariffs, and "friendshoring" pressures.</li>
+                    <li><strong>Economic Uncertainty:</strong> Persistent inflation, interest rate volatility, and uneven recovery impact consumer confidence and purchasing power.</li>
+                    <li><strong>Climate & Sustainability Regulation:</strong> Accelerating ESG mandates (EU Green Deal, carbon border adjustments) require circular practices and transparent reporting.</li>
+                    <li><strong>Technology & Data Governance:</strong> AI advancement alongside stricter data privacy laws (GDPR, regional variants) create both opportunities and compliance risks.</li>
+                    <li><strong>Social & Political Instability:</strong> Rising inequality and political polarization influence consumer behavior and brand perception.</li>
+                    <li><strong>Energy Transition:</strong> Volatile energy prices and shift to renewables impact operational costs and logistics.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Regional Analyses -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('regions')">
+                <h2>🗺️ Regional Geopolitical Landscapes</h2>
+                <span class="toggle-icon" id="icon-regions">+</span>
+            </div>
+            <div class="section-content" id="content-regions">
+                <div class="region-grid">
+                    <div class="region-box">
+                        <h4>Europe (EU, UK, Nordics, Eastern Europe)</h4>
+                        <ul>
+                            <li><strong>Ingka:</strong> Core market with high sustainability awareness; regulatory complexity around ESG and data; potential for circular retail leadership.</li>
+                            <li><strong>Inter IKEA:</strong> Energy cost pressures; Eastern Europe manufacturing at risk from geopolitical tensions; need for supply chain resilience.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-box">
+                        <h4>North America (USA, Canada, Mexico)</h4>
+                        <ul>
+                            <li><strong>Ingka:</strong> Large market with e-commerce growth; political polarization affects consumer sentiment; opportunity for smaller format stores.</li>
+                            <li><strong>Inter IKEA:</strong> Tariff risks on imports; nearshoring opportunities in Mexico; USMCA trade dynamics.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-box">
+                        <h4>Asia (China, India, Southeast Asia)</h4>
+                        <ul>
+                            <li><strong>Ingka:</strong> High-growth markets with digital-first consumers; need for localization and cultural sensitivity in brand messaging.</li>
+                            <li><strong>Inter IKEA:</strong> Critical manufacturing hub facing US-China tensions; opportunity to diversify to Vietnam, India; complex regulatory environments.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="region-box">
+                        <h4>Emerging Markets (Latin America, Africa)</h4>
+                        <ul>
+                            <li><strong>Ingka:</strong> Long-term growth potential; requires affordability focus and adaptable retail formats; infrastructure challenges.</li>
+                            <li><strong>Inter IKEA:</strong> Sourcing opportunities for raw materials; logistics and political instability risks; currency volatility.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Impact on Ingka Group -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('ingka')">
+                <h2>🏪 Impact on Ingka Group (Retail Operations)</h2>
+                <span class="toggle-icon" id="icon-ingka">+</span>
+            </div>
+            <div class="section-content" id="content-ingka">
+                <div class="subsection">
+                    <h3>Consumer Behavior & Demand</h3>
+                    <h4>Risks:</h4>
+                    <ul>
+                        <li>Economic downturns reduce discretionary spending on furniture</li>
+                        <li>Shift towards essential purchases and delayed buying decisions</li>
+                    </ul>
+                    <h4>Opportunities:</h4>
+                    <ul>
+                        <li>Emphasize value proposition and affordability</li>
+                        <li>Expand durable, repairable product lines and circular services (buy-back, repair)</li>
+                    </ul>
+                </div>
                 
-                <h3>2. Economic Volatility & Consumer Confidence</h3>
-                <p><strong>Trend:</strong> Persistent inflation, interest rate fluctuations, and uneven global recovery create economic uncertainty through 2031.</p>
-                <p><strong>Impact on Ingka:</strong> Direct impact on discretionary spending; shift toward value, durability, and essential items.</p>
-                <p><strong>Impact on Inter IKEA:</strong> Higher operational costs (energy, labor); pressure on margins; volatility in raw material prices.</p>
+                <div class="subsection">
+                    <h3>Market Access & Operations</h3>
+                    <h4>Risks:</h4>
+                    <ul>
+                        <li>Potential market exit pressures due to sanctions or political tensions</li>
+                        <li>Increased operational costs (energy, labor, rent)</li>
+                    </ul>
+                    <h4>Opportunities:</h4>
+                    <ul>
+                        <li>Flexible retail formats (city stores, planning studios, pick-up points)</li>
+                        <li>Market expansion in high-growth emerging economies</li>
+                    </ul>
+                </div>
                 
-                <h3>3. Climate Change & Regulatory Pressure</h3>
-                <p><strong>Trend:</strong> Accelerating climate impacts drive stricter environmental regulations (EU Green Deal expansion, carbon border adjustments, circular economy mandates).</p>
-                <p><strong>Impact on Ingka:</strong> New requirements for product labeling, packaging, waste management; opportunity for circular retail leadership.</p>
-                <p><strong>Impact on Inter IKEA:</strong> Compliance costs for sustainable materials; potential resource scarcity (timber, metals); green logistics investments.</p>
+                <div class="subsection">
+                    <h3>Digital Transformation</h3>
+                    <h4>Opportunities:</h4>
+                    <ul>
+                        <li>Enhanced omnichannel experience with AI-driven personalization</li>
+                        <li>Improved inventory management and customer insights through data analytics</li>
+                        <li>Expansion of e-commerce and last-mile delivery capabilities</li>
+                    </ul>
+                    <h4>Risks:</h4>
+                    <ul>
+                        <li>Cybersecurity threats and data privacy compliance costs</li>
+                        <li>Fragmented data regulations across markets (GDPR, CCPA, etc.)</li>
+                    </ul>
+                </div>
                 
-                <h3>4. Technological Disruption & Data Governance</h3>
-                <p><strong>Trend:</strong> Rapid AI advancement, e-commerce evolution, and fragmented data privacy regulations (GDPR, CCPA variants globally).</p>
-                <p><strong>Impact on Ingka:</strong> Opportunities for AI-driven personalization and operational efficiency; cybersecurity risks; complex data compliance.</p>
-                <p><strong>Impact on Inter IKEA:</strong> Smart supply chain management; predictive analytics for demand forecasting; digital twins for logistics.</p>
+                <div class="subsection">
+                    <h3>Brand & Reputation</h3>
+                    <h4>Risks:</h4>
+                    <ul>
+                        <li>Association with controversial suppliers or geopolitical events</li>
+                        <li>Failure to meet consumer expectations on sustainability and ethics</li>
+                    </ul>
+                    <h4>Opportunities:</h4>
+                    <ul>
+                        <li>Strengthen sustainability leadership as core brand differentiator</li>
+                        <li>Deep local community engagement to build trust</li>
+                    </ul>
+                </div>
                 
-                <h3>5. Social & Political Instability</h3>
-                <p><strong>Trend:</strong> Rising inequality, political polarization
+                <div class="subsection">
+                    <h3>Regulatory Compliance</h3>
+                    <h4>Risks:</h4>
+                    <ul>
+                        <li>Diverse and evolving ESG, consumer protection, and data privacy laws</li>
+                        <li>Costs of compliance across multiple jurisdictions</li>
+                    </ul>
+                    <h4>Opportunities:</h4>
+                    <ul>
+                        <li>Proactive compliance
