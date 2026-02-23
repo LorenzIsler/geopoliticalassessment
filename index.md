@@ -1,432 +1,387 @@
- Create the complete HTML file with IKEA-style design, collapsible sections, and Inter IKEA content
+# Create the complete HTML file for IKEA Geopolitical Assessment
 
-html_content = """<!DOCTYPE html>
+html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geopolitical Assessment for IKEA Retail (Ingka Group)</title>
-    <meta name="description" content="Comprehensive geopolitical assessment for IKEA Retail (Ingka Group), focusing on risks, opportunities, and strategic recommendations for global operations, targeting the Management Board.">
-    <meta name="keywords" content="IKEA, Ingka Group, Inter IKEA, Retail, Geopolitical Assessment, Risk Management, Strategic Planning, Global Operations, Consumer Behavior, Sustainability, Digital Transformation">
-    <meta name="author" content="Geopolitical Analysis Team">
-
-    <!-- Open Graph / Social Media Tags -->
-    <meta property="og:title" content="Geopolitical Assessment for IKEA Retail (Ingka Group)">
-    <meta property="og:description" content="Comprehensive geopolitical assessment for IKEA Retail (Ingka Group), focusing on risks, opportunities, and strategic recommendations for global operations.">
-    <meta property="og:type" content="article">
-
+    <title>IKEA Geopolitical Assessment 2026-2031</title>
+    <meta name="description" content="Comprehensive geopolitical assessment for IKEA (Ingka Group & Inter IKEA), focusing on 1-5 year strategic planning.">
+    <meta name="keywords" content="IKEA, Ingka Group, Inter IKEA, Geopolitical Assessment, Retail Strategy, Supply Chain">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Noto IKEA', 'Noto Sans', Arial, sans-serif;
+            font-family: 'Noto IKEA', 'Verdana', Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f5f5f5;
             color: #111;
+            background-color: #f5f5f5;
         }
-
-        .header {
-            background: linear-gradient(135deg, #0058ab 0%, #003d82 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .header .subtitle {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-
-        .header .tagline {
-            font-size: 0.95em;
-            opacity: 0.8;
-            font-style: italic;
-        }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
+        
+        /* IKEA Header */
+        header {
+            background-color: #0058ab;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .header-accent {
+            height: 6px;
+            background-color: #ffcc00;
+            margin-top: 20px;
+        }
+        
         /* Tags */
         .tags {
-            text-align: center;
             margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
         }
-
-        .tags span {
-            display: inline-block;
-            background-color: #ffda1a;
-            color: #111;
+        
+        .tag {
+            background-color: #fff;
+            color: #0058ab;
             padding: 6px 14px;
             border-radius: 20px;
-            margin: 4px;
             font-size: 0.85em;
             font-weight: 600;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 2px solid #0058ab;
         }
-
-        /* Navigation Box */
-        .nav-box {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-top: 4px solid #0058ab;
-        }
-
-        .nav-box h2 {
-            color: #0058ab;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .nav-box ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
-        }
-
-        .nav-box li a {
-            display: block;
-            padding: 12px 15px;
-            background: #f5f5f5;
-            color: #0058ab;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .nav-box li a:hover {
-            background: #0058ab;
+        
+        /* Executive Summary Box */
+        .executive-summary {
+            background: linear-gradient(135deg, #0058ab 0%, #0070d2 100%);
             color: white;
-            transform: translateX(5px);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,88,171,0.3);
         }
-
-        /* Executive Summary - Hero Box */
-        .hero-box {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 12px;
-            padding: 35px;
-            margin: 30px 0;
-            box-shadow: 0 6px 20px rgba(0,88,171,0.15);
-            border-left: 8px solid #0058ab;
-        }
-
-        .hero-box h2 {
-            color: #0058ab;
+        
+        .executive-summary h2 {
             font-size: 2em;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
         }
-
-        .hero-box .icon {
-            font-size: 1.2em;
+        
+        .executive-summary h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
         }
-
-        /* Content Boxes */
-        .content-box {
-            background: white;
+        
+        .executive-summary ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .executive-summary li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background-color: rgba(255, 204, 0, 0.2);
+            border-left: 4px solid #ffcc00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        /* Section Cards */
+        .section-card {
+            background-color: white;
             border-radius: 8px;
-            padding: 30px;
-            margin: 25px 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-top: 4px solid #0058ab;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #0058ab;
         }
-
-        .content-box h2 {
+        
+        .section-card h2 {
             color: #0058ab;
             font-size: 1.8em;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .content-box h3 {
+        
+        .section-card h3 {
             color: #333;
             font-size: 1.3em;
             margin-top: 20px;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #f5f5f5;
+            margin-bottom: 10px;
         }
-
-        /* Highlight boxes */
-        .highlight-grid {
+        
+        /* Summary and Deep Dive */
+        .summary {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .deep-dive {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+        
+        .deep-dive.active {
+            display: block;
+        }
+        
+        .deep-dive-btn {
+            background-color: #0058ab;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .deep-dive-btn:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,88,171,0.3);
+        }
+        
+        .deep-dive-btn.active {
+            background-color: #ffcc00;
+            color: #111;
+        }
+        
+        /* Regional Boxes */
+        .region-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin: 20px 0;
+            margin-top: 20px;
         }
-
-        .highlight-card {
-            background: #fff9e6;
-            border-left: 5px solid #ffda1a;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-
-        .highlight-card.risk {
-            background: #ffebee;
-            border-left-color: #d32f2f;
-        }
-
-        .highlight-card.opportunity {
-            background: #e8f5e9;
-            border-left-color: #388e3c;
-        }
-
-        .highlight-card h4 {
-            color: #0058ab;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .highlight-card ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .highlight-card li {
-            padding: 8px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .highlight-card li:before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: #0058ab;
-            font-weight: bold;
-        }
-
-        /* Deep Dive Toggle Button */
-        .deep-dive-btn {
-            background: #0058ab;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            margin: 20px 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,88,171,0.2);
-        }
-
-        .deep-dive-btn:hover {
-            background: #003d82;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,88,171,0.3);
-        }
-
-        .deep-dive-btn:active {
-            transform: translateY(0);
-        }
-
-        .deep-dive-btn::after {
-            content: " ▼";
-            font-size: 0.8em;
-        }
-
-        .deep-dive-btn.active::after {
-            content: " ▲";
-        }
-
-        /* Deep Dive Content */
-        .deep-dive-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-
-        .deep-dive-content.active {
-            max-height: 5000px;
-        }
-
-        /* Regional Cards */
-        .region-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .region-card {
-            background: white;
+        
+        .region-box {
+            background-color: white;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-top: 4px solid #ffda1a;
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            border-top: 4px solid #0058ab;
         }
-
-        .region-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-        }
-
-        .region-card h3 {
+        
+        .region-box h3 {
             color: #0058ab;
-            margin-top: 0;
-            border-bottom: none;
+            margin-bottom: 12px;
+            font-size: 1.2em;
         }
-
-        /* Inter IKEA Label */
-        .inter-ikea-label {
-            display: inline-block;
-            background: #ffda1a;
-            color: #111;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: 700;
-            margin-left: 10px;
-            vertical-align: middle;
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
         }
-
-        .ingka-label {
-            display: inline-block;
-            background: #0058ab;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: 700;
-            margin-left: 10px;
-            vertical-align: middle;
+        
+        .column-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #0058ab;
         }
-
+        
+        .column-box.inter-ikea {
+            border-left-color: #ffcc00;
+        }
+        
+        .column-box h4 {
+            color: #0058ab;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        
+        .column-box.inter-ikea h4 {
+            color: #d68000;
+        }
+        
         /* Lists */
         ul, ol {
             margin-left: 20px;
             margin-bottom: 15px;
         }
-
+        
         li {
             margin-bottom: 8px;
         }
-
-        strong {
-            color: #0058ab;
-            font-weight: 600;
+        
+        /* Scenario Cards */
+        .scenario-card {
+            background: linear-gradient(to right, #f5f5f5, white);
+            border-left: 5px solid #ffcc00;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
         }
-
+        
+        .scenario-card h3 {
+            color: #0058ab;
+            margin-bottom: 10px;
+        }
+        
+        /* Risk/Opportunity Boxes */
+        .risk-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .opportunity-box {
+            background-color: #f0f8ff;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
         /* Footer */
-        .footer {
-            background: #111;
+        footer {
+            background-color: #111;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             margin-top: 50px;
         }
-
-        .footer p {
-            opacity: 0.8;
-            font-size: 0.9em;
+        
+        .footer-accent {
+            height: 6px;
+            background-color: #ffcc00;
+            margin-bottom: 20px;
         }
-
+        
         /* Responsive */
         @media (max-width: 768px) {
-            .header h1 {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
                 font-size: 1.8em;
             }
             
-            .highlight-grid, .region-grid {
+            .region-grid {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* Scroll behavior */
-        html {
-            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>🌍 Geopolitical Assessment for IKEA</h1>
-        <div class="subtitle">Ingka Group Retail Operations & Inter IKEA System</div>
-        <div class="tagline">Strategic Insights for the Global Management Board | FY25-FY30</div>
-    </div>
+    <header>
+        <h1>🌍 IKEA Geopolitical Assessment</h1>
+        <p>Strategic Outlook 2026-2031 | For the Global Management Board</p>
+        <div class="header-accent"></div>
+        <div class="tags">
+            <span class="tag">#IngkaGroup</span>
+            <span class="tag">#InterIKEA</span>
+            <span class="tag">#GeopoliticalRisk</span>
+            <span class="tag">#RetailStrategy</span>
+            <span class="tag">#SupplyChain</span>
+            <span class="tag">#1-5Years</span>
+        </div>
+    </header>
 
     <div class="container">
-
-        <div class="tags">
-            <span>#IKEA</span>
-            <span>#IngkaGroup</span>
-            <span>#InterIKEA</span>
-            <span>#Geopolitics</span>
-            <span>#Retail</span>
-            <span>#SupplyChain</span>
-            <span>#Trade</span>
-            <span>#Sustainability</span>
-            <span>#RiskManagement</span>
-            <span>#StrategicPlanning</span>
-        </div>
-
-        <!-- Navigation -->
-        <div class="nav-box">
-            <h2>📋 Quick Navigation</h2>
-            <ul>
-                <li><a href="#executive-summary">🚀 Executive Summary</a></li>
-                <li><a href="#global-overview">🌍 Global Geopolitical Overview</a></li>
-                <li><a href="#regional-landscapes">🗺️ Regional Landscapes</a></li>
-                <li><a href="#retail-impact">⚙️ Impact on Retail (Ingka)</a></li>
-                <li><a href="#supply-impact">📦 Impact on Supply & Trade (Inter IKEA)</a></li>
-                <li><a href="#scenarios">🔮 Strategic Scenarios</a></li>
-                <li><a href="#risks-opportunities">⚠️ Risks & Opportunities</a></li>
-                <li><a href="#recommendations">🎯 Strategic Recommendations</a></li>
-            </ul>
-        </div>
-
-        <!-- Executive Summary -->
-        <div class="hero-box" id="executive-summary">
-            <h2><span class="icon">🚀</span> Executive Summary: Key Insights</h2>
+        
+        <!-- EXECUTIVE SUMMARY -->
+        <div class="executive-summary">
+            <h2>🚀 Executive Summary</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">The global geopolitical landscape over the next 1-5 years presents both significant challenges and strategic opportunities for IKEA. This assessment distinguishes between <strong>Ingka Group (Retail)</strong> and <strong>Inter IKEA (Supply Chain & Trade)</strong> to provide targeted strategic insights.</p>
             
-            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
-                The global geopolitical landscape presents a <strong>complex and evolving environment</strong> for both <strong>Ingka Group's retail operations</strong> <span class="ingka-label">INGKA RETAIL</span> and <strong>Inter IKEA's supply chain, trade, and franchising systems</strong> <span class="inter-ikea-label">INTER IKEA</span>. External forces are increasingly shaping market dynamics, consumer behavior, regulatory frameworks, and global trade flows.
-            </p>
+            <div class="highlight-box">
+                <strong>KEY INSIGHT:</strong> Economic volatility, regulatory fragmentation, and shifting trade dynamics will require agile, localized strategies while maintaining global brand coherence.
+            </div>
+            
+            <h3>⚠️ Top Risks (2026-2031)</h3>
+            <ul>
+                <li><strong>Reduced Consumer Spending (Ingka):</strong> Economic downturns and inflation directly impact discretionary home furnishing purchases</li>
+                <li><strong>Trade Barriers & Tariffs (Inter IKEA):</strong> Protectionism and geopolitical tensions increase costs and complexity in global sourcing</li>
+                <li><strong>Regulatory Compliance Burden:</strong> Divergent ESG, data privacy, and product standards across markets</li>
+                <li><strong>Supply Chain Disruptions (Inter IKEA):</strong> Continued volatility in logistics, raw materials, and manufacturing hubs</li>
+            </ul>
+            
+            <h3>✅ Top Opportunities (2026-2031)</h3>
+            <ul>
+                <li><strong>Digital-First Retail (Ingka):</strong> Accelerated omnichannel innovation and personalized customer experiences</li>
+                <li><strong>Sustainability Leadership:</strong> Circular economy models (buy-back, repair) as competitive advantage</li>
+                <li><strong>Supply Chain Diversification (Inter IKEA):</strong> Strategic expansion into new manufacturing regions reduces single-point dependencies</li>
+                <li><strong>Emerging Market Growth:</strong> Long-term consumer base expansion in Asia, Latin America, and Africa</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <strong>STRATEGIC RECOMMENDATION:</strong> Prioritize agility, regional diversification, digital excellence, and unwavering sustainability commitment to navigate the 2026-2031 landscape successfully.
+            </div>
+        </div>
 
-            <div class="highlight-grid">
-                <div class="highlight-card risk">
-                    <h4>🔴 Top Risks</h4>
-                    <ul>
-                        <li><strong>Reduced Consumer Spending</strong> (Ingka): Economic downturns impacting discretionary purchases</li>
-                        <li><strong>Supply Chain Disruptions</strong> (Inter IKEA): Geopolitical tensions, tariffs, and logistics bottlenecks</li>
-                        <li><strong>Market Access Restrictions</strong>: Trade barriers and regulatory divergence</li>
-                        <li><strong>Brand & Reputation Risks</strong>: Association with controversial suppliers or geopolitical events</li>
-                    </ul>
-                </div>
-
-                <div class="highlight-card opportunity">
-                    <h4>🟢 Key Opportunities</h4>
-                    <ul>
-                        <li><strong>Digital-First Innovation</strong> (Ingka): Omnichannel excellence and personalization</li>
-                        <li><strong>Supply Chain Diversification</strong> (Inter IKEA): Multi-regional sourcing strategies</li>
-                        <li><strong>Sustainability Leadership</strong>: Circular economy and ethical practices</li>
-                        <li><strong>
+        <!-- GLOBAL OVERVIEW -->
+        <div class="section-card">
+            <h2>🌍 Global Geopolitical Overview</h2>
+            <div class="summary">
+                <p><strong>Summary:</strong> The 2026-2031 period will be characterized by increased fragmentation, economic uncertainty, climate pressures, and technological disruption. Five key trends will shape the operating environment for both Ingka Group and Inter IKEA.</p>
+            </div>
+            <button class="deep-dive-btn" onclick="toggleDeepDive('global-overview')">📊 Deep Dive</button>
+            
+            <div id="global-overview" class="deep-dive">
+                <h3>1. Geopolitical Fragmentation & Competition</h3>
+                <p><strong>Trend:</strong> Shift from hyper-globalization to regionalization, with distinct economic blocs forming (US-aligned, China-aligned, EU-autonomous). US-China rivalry continues to influence trade and technology.</p>
+                <p><strong>Impact on Ingka:</strong> Consumer nationalism may influence purchasing decisions; need for culturally sensitive marketing.</p>
+                <p><strong>Impact on Inter IKEA:</strong> Tariffs on finished goods, non-tariff barriers, and pressure to "friendshore" supply chains.</p>
+                
+                <h3>2. Economic Volatility & Consumer Confidence</h3>
+                <p><strong>Trend:</strong> Persistent inflation, interest rate fluctuations, and uneven global recovery create economic uncertainty through 2031.</p>
+                <p><strong>Impact on Ingka:</strong> Direct impact on discretionary spending; shift toward value, durability, and essential items.</p>
+                <p><strong>Impact on Inter IKEA:</strong> Higher operational costs (energy, labor); pressure on margins; volatility in raw material prices.</p>
+                
+                <h3>3. Climate Change & Regulatory Pressure</h3>
+                <p><strong>Trend:</strong> Accelerating climate impacts drive stricter environmental regulations (EU Green Deal expansion, carbon border adjustments, circular economy mandates).</p>
+                <p><strong>Impact on Ingka:</strong> New requirements for product labeling, packaging, waste management; opportunity for circular retail leadership.</p>
+                <p><strong>Impact on Inter IKEA:</strong> Compliance costs for sustainable materials; potential resource scarcity (timber, metals); green logistics investments.</p>
+                
+                <h3>4. Technological Disruption & Data Governance</h3>
+                <p><strong>Trend:</strong> Rapid AI advancement, e-commerce evolution, and fragmented data privacy regulations (GDPR, CCPA variants globally).</p>
+                <p><strong>Impact on Ingka:</strong> Opportunities for AI-driven personalization and operational efficiency; cybersecurity risks; complex data compliance.</p>
+                <p><strong>Impact on Inter IKEA:</strong> Smart supply chain management; predictive analytics for demand forecasting; digital twins for logistics.</p>
+                
+                <h3>5. Social & Political Instability</h3>
+                <p><strong>Trend:</strong> Rising inequality, political polarization
