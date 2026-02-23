@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +12,12 @@
         }
         
         body {
-            font-family: 'Calibri', 'Noto Sans', Arial, sans-serif;
+            font-family: 'Noto Sans', 'Calibri', Arial, sans-serif;
+            font-size: 14px;
             line-height: 1.5;
             color: #111;
             background-color: #fff;
             padding: 20px;
-            font-size: 14px;
         }
         
         .container {
@@ -52,10 +51,9 @@
             margin-top: 8px;
         }
         
-        /* Executive Summary - Always Visible */
         .executive-summary {
-            background-color: #f9f9f9;
-            border-left: 3px solid #0058ab;
+            background-color: #f8f8f8;
+            border-left: 4px solid #0058ab;
             padding: 20px;
             margin-bottom: 30px;
         }
@@ -87,7 +85,6 @@
         
         .highlight-box li {
             margin-bottom: 6px;
-            line-height: 1.4;
             font-size: 0.95em;
         }
         
@@ -96,24 +93,20 @@
             border-left: 3px solid #ffcc00;
             padding: 12px 15px;
             margin-top: 15px;
-            font-weight: 500;
             font-size: 0.95em;
         }
         
-        /* Collapsible Sections */
         .section {
             margin-bottom: 12px;
             border: 1px solid #d0d0d0;
+            background-color: #fff;
         }
         
         .section-header {
             background-color: #f5f5f5;
             padding: 12px 15px;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.2s;
+            border-bottom: 1px solid #d0d0d0;
         }
         
         .section-header:hover {
@@ -124,20 +117,45 @@
             color: #0058ab;
             font-size: 1.1em;
             font-weight: 600;
+            margin: 0;
         }
         
-        .toggle-icon {
-            font-size: 1.2em;
+        .section-summary {
+            padding: 12px 15px;
+            background-color: #fafafa;
+            font-size: 0.9em;
+            color: #333;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .tags {
+            margin-top: 8px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 2px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        
+        .tag-ingka {
+            background-color: #e3f2fd;
             color: #0058ab;
-            font-weight: normal;
-            font-family: monospace;
+        }
+        
+        .tag-inter {
+            background-color: #fff9e6;
+            color: #c58900;
         }
         
         .section-content {
             display: none;
-            padding: 18px;
+            padding: 15px;
             background-color: #fff;
-            font-size: 0.95em;
         }
         
         .section-content.active {
@@ -168,16 +186,11 @@
         
         .section-content li {
             margin-bottom: 6px;
-            line-height: 1.4;
-        }
-        
-        .section-content p {
-            margin-bottom: 10px;
-            line-height: 1.5;
+            font-size: 0.95em;
         }
         
         .subsection {
-            margin-top: 18px;
+            margin-top: 20px;
             padding-top: 15px;
             border-top: 1px solid #e8e8e8;
         }
@@ -188,38 +201,30 @@
             border-top: none;
         }
         
-        .entity-tag {
-            display: inline-block;
-            padding: 2px 8px;
-            font-size: 0.8em;
-            font-weight: 600;
-            margin-right: 6px;
-            margin-bottom: 4px;
-            border: 1px solid #ccc;
-            background-color: #f5f5f5;
-        }
-        
-        .tag-ingka {
-            border-color: #0058ab;
-            color: #0058ab;
-            background-color: #e8f4f8;
-        }
-        
-        .tag-inter {
-            border-color: #f5a623;
-            color: #f5a623;
-            background-color: #fff9e6;
-        }
-        
         strong {
             font-weight: 600;
             color: #111;
         }
         
+        .expand-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background-color: #0058ab;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-family: inherit;
+        }
+        
+        .expand-btn:hover {
+            background-color: #004494;
+        }
+        
         @media (max-width: 768px) {
             body {
                 font-size: 13px;
-                padding: 15px;
             }
             
             h1 {
@@ -228,10 +233,6 @@
             
             .section-header h2 {
                 font-size: 1em;
-            }
-            
-            .executive-summary {
-                padding: 15px;
             }
         }
     </style>
@@ -244,7 +245,6 @@
             <p class="timeframe">Medium-Term Focus: 1-5 Years (2026-2031)</p>
         </header>
 
-        <!-- EXECUTIVE SUMMARY - ALWAYS VISIBLE -->
         <div class="executive-summary">
             <h2>Executive Summary: Key Insights</h2>
             
@@ -265,122 +265,3 @@
                     <li><strong>Digital Transformation:</strong> Omnichannel retail innovation and AI-driven supply chain optimization can enhance customer experience and operational efficiency.</li>
                     <li><strong>Supply Chain Diversification (Inter IKEA):</strong> Strategic shifts toward nearshoring and multi-region sourcing build resilience against geopolitical shocks.</li>
                     <li><strong>Emerging Market Growth (Ingka):</strong> Rising middle classes in Asia, Latin America, and Africa present significant long-term retail expansion opportunities.</li>
-                </ul>
-            </div>
-            
-            <div class="recommendation">
-                <strong>Overall Recommendation:</strong> IKEA must prioritize agility and resilience through supply chain diversification (Inter IKEA), digital-first retail innovation (Ingka), and proactive sustainability leadership across both entities to navigate geopolitical volatility and secure competitive advantage over the next 1-5 years.
-            </div>
-        </div>
-
-        <!-- COLLAPSIBLE SECTIONS -->
-        
-        <!-- Global Geopolitical Overview -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('global')">
-                <h2>Global Geopolitical Overview</h2>
-                <span class="toggle-icon" id="icon-global">+</span>
-            </div>
-            <div class="section-content" id="global">
-                <ul>
-                    <li><strong>Geopolitical Fragmentation:</strong> Shift from globalization to regionalization with distinct economic blocs (US-aligned, China-aligned, EU-autonomous) creating trade barriers and investment restrictions.</li>
-                    <li><strong>Economic Uncertainty:</strong> Persistent inflation, interest rate volatility, and uneven recovery across regions impact consumer confidence and purchasing power.</li>
-                    <li><strong>Climate & Sustainability Regulation:</strong> Accelerating environmental mandates (EU Green Deal, carbon pricing) require circular economy practices and transparent reporting.</li>
-                    <li><strong>Digital & Data Governance:</strong> Divergent data privacy laws (GDPR, CCPA) and rising cybersecurity threats complicate global operations.</li>
-                    <li><strong>Social & Political Instability:</strong> Rising inequality and political polarization influence consumer behavior and brand expectations for social responsibility.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Regional Analyses -->
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('europe')">
-                <h2>Europe (EU, UK, Nordics, Eastern Europe)</h2>
-                <span class="toggle-icon" id="icon-europe">+</span>
-            </div>
-            <div class="section-content" id="europe">
-                <div class="subsection">
-                    <span class="entity-tag tag-ingka">Ingka Group</span>
-                    <ul>
-                        <li>Core consumer market with high sustainability awareness and digital adoption</li>
-                        <li>Energy cost pressures affecting retail operations and consumer spending</li>
-                        <li>Leading regulatory environment for circular retail (buy-back, repair services)</li>
-                        <li>Post-Brexit complexity in UK market operations</li>
-                    </ul>
-                </div>
-                <div class="subsection">
-                    <span class="entity-tag tag-inter">Inter IKEA</span>
-                    <ul>
-                        <li>Eastern Europe remains key manufacturing hub but with heightened geopolitical risk</li>
-                        <li>EU carbon border adjustment mechanism (CBAM) impacts import costs</li>
-                        <li>Supply chain diversification needed to reduce single-region dependency</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('northamerica')">
-                <h2>North America (USA, Canada, Mexico)</h2>
-                <span class="toggle-icon" id="icon-northamerica">+</span>
-            </div>
-            <div class="section-content" id="northamerica">
-                <div class="subsection">
-                    <span class="entity-tag tag-ingka">Ingka Group</span>
-                    <ul>
-                        <li>Large, competitive retail market with strong e-commerce growth</li>
-                        <li>Political polarization creates unpredictable consumer sentiment</li>
-                        <li>Opportunity for smaller format stores and enhanced digital services</li>
-                        <li>Diverse regional preferences require localized strategies</li>
-                    </ul>
-                </div>
-                <div class="subsection">
-                    <span class="entity-tag tag-inter">Inter IKEA</span>
-                    <ul>
-                        <li>Tariff uncertainty (especially US) could impact finished goods pricing</li>
-                        <li>USMCA framework provides opportunities for regional sourcing</li>
-                        <li>Nearshoring trend to Mexico presents manufacturing opportunities</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('asia')">
-                <h2>Asia (China, India, Southeast Asia)</h2>
-                <span class="toggle-icon" id="icon-asia">+</span>
-            </div>
-            <div class="section-content" id="asia">
-                <div class="subsection">
-                    <span class="entity-tag tag-ingka">Ingka Group</span>
-                    <ul>
-                        <li>Critical growth markets with rapid urbanization and rising middle class</li>
-                        <li>China: Mature but geopolitically sensitive market requiring careful brand positioning</li>
-                        <li>India & SEA: High-growth opportunities for digital-first retail and localized formats</li>
-                        <li>Cultural sensitivity in marketing essential across diverse markets</li>
-                    </ul>
-                </div>
-                <div class="subsection">
-                    <span class="entity-tag tag-inter">Inter IKEA</span>
-                    <ul>
-                        <li>China remains critical manufacturing hub but US-China tensions create risk</li>
-                        <li>Vietnam, India, Indonesia emerging as alternative sourcing destinations</li>
-                        <li>Diversification within Asia essential to mitigate geopolitical shocks</li>
-                        <li>Supply chain complexity increases with multi-country sourcing strategies</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header" onclick="toggleSection('emerging')">
-                <h2>Emerging Markets (Latin America, Africa)</h2>
-                <span class="toggle-icon" id="icon-emerging">+</span>
-            </div>
-            <div class="section-content" id="emerging">
-                <div class="subsection">
-                    <span class="entity-tag tag-ingka">Ingka Group</span>
-                    <ul>
-                        <li>Long-term growth frontiers with young, urbanizing populations</li>
-                        <li>High economic volatility requires flexible pricing and adaptable formats</li>
-
